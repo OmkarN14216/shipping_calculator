@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        .about {
+            text-align: center;
+        }
+
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+
+        .skills, .projects, .recommendations {
+            margin: 2rem 0;
+        }
+
+        .skills div, .projects div, .recommendations div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .skills img, .projects img {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Omkar Nama</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="about">
+        <img src="profile.webp" alt="Profile Image">
+        <h2>About Me</h2>
+        <p>Hello! I am a web developer with a passion for creating stunning websites and solving problems.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div>
+            <img src="HTML5.png" alt="HTML Logo">
+            <p>HTML</p>
+        </div>
+        <div>
+            <img src="css.jpg" alt="CSS Logo">
+            <p>CSS</p>
+        </div>
+        <div>
+            <img src="Js.png" alt="JavaScript Logo">
+            <p>JavaScript</p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div>
+            <img src="portfolio.svg" alt="Project 1">
+            <p>Project 1: Portfolio Website</p>
+        </div>
+        <div>
+            <img src="e-commerce.png" alt="Project 2">
+            <p>Project 2: E-commerce Website</p>
+        </div>
+        <div>
+            <img src="blogger.png" alt="Project 3">
+            <p>Project 3: Blogging Platform</p>
+        </div>
+    </section>
+
+    <section id="recommendations" class="recommendations">
+        <h2>Recommendations</h2>
+        <div id="recommendation-list">
+            <div>
+                <p>"Great developer with attention to detail." - Dane Jones
+                <br>"Delivered the project on time and exceeded expectations." - Tim Cook
+                <br>"Learn ReactJs " - Johnny Deep
+                <br>"Learn GoLang" 
+                </p>
+            </div>
+            
+        </div>
+        <textarea id="new-recommendation" placeholder="Add a new recommendation..."></textarea><br>
+        <button onclick="addRecommendation()">Submit Recommendation</button>
+    </section>
+
+    <footer>
+        <img src="home-icon.png" alt="Home Icon" style="width: 40px; height: 40px;">
+    </footer>
+    
+    <script>
+        function addRecommendation() {
+            const recommendationList = document.getElementById("recommendation-list");
+            const newRecommendation = document.getElementById("new-recommendation").value;
+
+            if (newRecommendation.trim() === "") {
+                alert("Please enter a recommendation.");
+                return;
+            }
+
+            const newDiv = document.createElement("div");
+            newDiv.innerHTML = `<p>${newRecommendation}</p>`;
+            recommendationList.appendChild(newDiv);
+
+            alert("Recommendation added successfully!");
+            document.getElementById("new-recommendation").value = "";
+        }
+    </script>
+</body>
+</html>
